@@ -5,92 +5,319 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>WhatsApp Sender · Rotaract Club of Rubaga</title>
 <meta name="description" content="Send personalised WhatsApp messages and flyers to a contact list. Runs entirely in your browser.">
+<meta name="theme-color" content="#075E54">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0..1,0&display=block" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2300A884'/%3E%3Cpath d='M16 46l4-10a16 16 0 1 1 7 7z' fill='%23fff'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <div class="wrap">
-    <h1>WhatsApp Sender</h1>
-    <p>Rotaract Club of Rubaga · personalised messages and flyers, one click per contact</p>
+
+<!-- ============ TOP BAR ============ -->
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="#">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40"><rect width="40" height="40" rx="12" fill="#00A884"/><path d="M11 29l2.4-6.2A9.6 9.6 0 1 1 17.6 27z" fill="#fff"/><path d="M16.5 17.5h7M16.5 21h4.5" stroke="#00A884" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </span>
+      <span>
+        <span class="brand-title">WhatsApp Sender</span>
+        <span class="brand-sub">Rotaract Club of Rubaga</span>
+      </span>
+    </a>
+    <nav class="topnav" aria-label="Sections">
+      <a href="#upload">Contacts</a><a href="#compose">Message</a><a href="#stats">Statistics</a><a href="#send">Send</a>
+    </nav>
+    <span class="privacy-chip" title="Contacts, messages and flyers are processed in your browser and never uploaded.">
+      <span class="ms">lock</span> Data stays on this device
+    </span>
   </div>
 </header>
 
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-text">
+      <h1>Personalised WhatsApp messages,<br><span>one click per contact.</span></h1>
+      <p>Upload your contact list, write one message with placeholders, add a flyer, then send to everyone with each person's name filled in.</p>
+      <ol class="hero-steps">
+        <li><span>1</span>Upload Excel</li>
+        <li><span>2</span>Compose</li>
+        <li><span>3</span>Add flyer</li>
+        <li><span>4</span>Send &amp; track</li>
+      </ol>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 420 300">
+        <defs>
+          <linearGradient id="hg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".22"/><stop offset="1" stop-color="#ffffff" stop-opacity=".05"/></linearGradient>
+        </defs>
+        <circle cx="330" cy="70" r="60" fill="url(#hg)"/>
+        <circle cx="70" cy="240" r="44" fill="url(#hg)"/>
+        <!-- spreadsheet -->
+        <g transform="translate(26 54) rotate(-6)">
+          <rect width="150" height="120" rx="14" fill="#fff"/>
+          <rect width="150" height="28" rx="14" fill="#E7F8F2"/><rect y="14" width="150" height="14" fill="#E7F8F2"/>
+          <g fill="#C9D6D1"><rect x="14" y="10" width="40" height="8" rx="4"/><rect x="72" y="10" width="56" height="8" rx="4"/></g>
+          <g fill="#E3E9E6">
+            <rect x="14" y="42" width="40" height="8" rx="4"/><rect x="72" y="42" width="60" height="8" rx="4"/>
+            <rect x="14" y="62" width="34" height="8" rx="4"/><rect x="72" y="62" width="60" height="8" rx="4"/>
+            <rect x="14" y="82" width="44" height="8" rx="4"/><rect x="72" y="82" width="60" height="8" rx="4"/>
+            <rect x="14" y="102" width="30" height="8" rx="4"/><rect x="72" y="102" width="60" height="8" rx="4"/>
+          </g>
+        </g>
+        <!-- arrows -->
+        <path d="M190 120c22-18 40-18 60-6" stroke="#fff" stroke-width="3" fill="none" stroke-dasharray="6 7" stroke-linecap="round"/>
+        <path d="M246 106l8 9-11 3" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- phone -->
+        <g transform="translate(262 30)">
+          <rect width="128" height="240" rx="24" fill="#0B141A"/>
+          <rect x="7" y="7" width="114" height="226" rx="18" fill="#EFE7DD"/>
+          <rect x="7" y="7" width="114" height="34" rx="18" fill="#075E54"/><rect x="7" y="26" width="114" height="15" fill="#075E54"/>
+          <circle cx="26" cy="24" r="8" fill="#9EE7D0"/><rect x="40" y="18" width="44" height="6" rx="3" fill="#fff" opacity=".9"/><rect x="40" y="27" width="26" height="5" rx="2.5" fill="#fff" opacity=".5"/>
+          <rect x="34" y="54" width="80" height="54" rx="10" fill="#D9FDD3"/>
+          <rect x="40" y="60" width="68" height="34" rx="6" fill="#00A884" opacity=".85"/>
+          <path d="M52 86l12-14 9 9 6-6 12 11z" fill="#fff" opacity=".8"/>
+          <rect x="40" y="99" width="40" height="4" rx="2" fill="#9DBF98"/>
+          <rect x="22" y="118" width="92" height="44" rx="10" fill="#D9FDD3"/>
+          <rect x="30" y="127" width="72" height="5" rx="2.5" fill="#7FA87A"/><rect x="30" y="137" width="60" height="5" rx="2.5" fill="#7FA87A"/><rect x="30" y="147" width="40" height="5" rx="2.5" fill="#7FA87A"/>
+          <path d="M96 154l3 3 6-6M100 154l3 3 6-6" stroke="#53BDEB" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+          <rect x="14" y="172" width="70" height="30" rx="10" fill="#fff"/>
+          <rect x="22" y="181" width="50" height="5" rx="2.5" fill="#C9D1CE"/><rect x="22" y="190" width="32" height="5" rx="2.5" fill="#C9D1CE"/>
+        </g>
+        <!-- floating badges -->
+        <g transform="translate(200 220)"><rect width="74" height="34" rx="17" fill="#fff"/><circle cx="17" cy="17" r="10" fill="#00A884"/><path d="M12 17l3.5 3.5L22 14" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="33" y="14" width="30" height="6" rx="3" fill="#C9D6D1"/></g>
+      </svg>
+    </div>
+  </div>
+</section>
+
 <main class="wrap">
-  <div class="privacy">
-    <strong>Your list stays on this device.</strong> Contacts, messages and flyers are processed in your browser and are never uploaded anywhere.
+
+  <!-- ============ STATS ============ -->
+  <section id="stats" class="card stats-card">
+    <div class="card-head">
+      <div class="card-icon"><span class="ms">monitoring</span></div>
+      <div><h2>Statistics</h2><p class="muted">Live overview of your contact list and sending progress.</p></div>
+      <span class="grow"></span>
+      <button class="btn btn-tonal" id="exportBtn"><span class="ms">download</span> Export report</button>
+    </div>
+    <div class="stats-grid">
+      <div class="ring-box">
+        <svg class="ring" viewBox="0 0 120 120" aria-hidden="true">
+          <circle cx="60" cy="60" r="50" class="ring-bg"/>
+          <circle cx="60" cy="60" r="50" class="ring-fg" id="ringFg"/>
+        </svg>
+        <div class="ring-label"><b id="ringPct">0%</b><span>sent</span></div>
+      </div>
+      <div class="stat"><span class="ms stat-ic c-blue">group</span><b id="stTotal">0</b><span>Total contacts</span></div>
+      <div class="stat"><span class="ms stat-ic c-green">verified</span><b id="stValid">0</b><span>Ready to send</span></div>
+      <div class="stat"><span class="ms stat-ic c-teal">done_all</span><b id="stSent">0</b><span>Sent</span></div>
+      <div class="stat"><span class="ms stat-ic c-amber">schedule</span><b id="stPending">0</b><span>Pending</span></div>
+      <div class="stat"><span class="ms stat-ic c-red">error</span><b id="stIssues">0</b><span>Invalid or duplicate</span></div>
+      <div class="activity">
+        <div class="activity-head"><b>Sending activity</b><span class="muted" id="paceTxt">No messages sent yet</span></div>
+        <svg id="actChart" viewBox="0 0 300 70" preserveAspectRatio="none" aria-hidden="true"></svg>
+        <div class="activity-foot muted"><span id="actFrom"></span><span id="etaTxt"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="layout">
+    <div class="col-main">
+
+      <!-- ============ UPLOAD ============ -->
+      <section id="upload" class="card">
+        <div class="card-head">
+          <div class="card-icon"><span class="ms">upload_file</span></div>
+          <div><h2>1. Upload contacts</h2><p class="muted">An Excel or CSV file with each receiver's name and phone number.</p></div>
+        </div>
+
+        <label class="dropzone" id="dropzone">
+          <input type="file" id="file" accept=".xlsx,.xls,.csv" hidden>
+          <svg class="dz-art" viewBox="0 0 120 96" aria-hidden="true">
+            <rect x="22" y="10" width="62" height="78" rx="10" fill="#E7F8F2"/>
+            <rect x="30" y="4" width="62" height="78" rx="10" fill="#fff" stroke="#BFE9DA" stroke-width="2"/>
+            <rect x="30" y="4" width="62" height="18" rx="10" fill="#00A884"/><rect x="30" y="14" width="62" height="8" fill="#00A884"/>
+            <g fill="#D8E6E0"><rect x="38" y="30" width="16" height="6" rx="3"/><rect x="60" y="30" width="24" height="6" rx="3"/><rect x="38" y="44" width="16" height="6" rx="3"/><rect x="60" y="44" width="24" height="6" rx="3"/><rect x="38" y="58" width="16" height="6" rx="3"/><rect x="60" y="58" width="24" height="6" rx="3"/></g>
+            <circle cx="92" cy="72" r="16" fill="#075E54"/><path d="M92 80V65m-6 6l6-6 6 6" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="dz-title">Drag &amp; drop your Excel file here</span>
+          <span class="muted">or <u>browse</u> · .xlsx, .xls or .csv</span>
+        </label>
+
+        <div class="file-bar" id="fileBar" hidden>
+          <span class="ms file-ic">table_view</span>
+          <div class="grow"><b id="fileName">contacts.xlsx</b><div class="muted small" id="fileMeta"></div></div>
+          <button class="btn btn-text" id="replaceBtn"><span class="ms">swap_horiz</span> Replace</button>
+          <button class="btn btn-text danger" id="clearAll"><span class="ms">delete</span> Remove</button>
+        </div>
+
+        <div class="mapping" id="mapping" hidden>
+          <div class="field">
+            <label for="mapName">Receiver name column</label>
+            <div class="select"><select id="mapName"></select></div>
+          </div>
+          <div class="field">
+            <label for="mapPhone">Phone number column</label>
+            <div class="select"><select id="mapPhone"></select></div>
+          </div>
+          <div class="field narrow">
+            <label for="cc">Default country code</label>
+            <div class="input-prefix"><span>+</span><input type="text" id="cc" inputmode="numeric" maxlength="4"></div>
+          </div>
+        </div>
+
+        <div class="card-foot">
+          <span class="muted small"><span class="ms tiny">info</span> Numbers starting with 0 get the country code added automatically.</span>
+          <span class="grow"></span>
+          <a class="btn btn-text" href="template/WhatsApp_Contacts_Template.xlsx" download><span class="ms">description</span> Download template</a>
+        </div>
+      </section>
+
+      <!-- ============ COMPOSE ============ -->
+      <section id="compose" class="card">
+        <div class="card-head">
+          <div class="card-icon"><span class="ms">edit_note</span></div>
+          <div><h2>2. Compose message</h2><p class="muted">Write one message. Placeholders are replaced with each contact's details.</p></div>
+        </div>
+
+        <div class="ph-bar">
+          <span class="ph-label">Insert placeholder</span>
+          <div id="phChips" class="chips"></div>
+        </div>
+
+        <div class="editor">
+          <div class="toolbar" role="toolbar" aria-label="Formatting">
+            <button class="tb" data-wrap="*" title="Bold (*text*)"><span class="ms">format_bold</span></button>
+            <button class="tb" data-wrap="_" title="Italic (_text_)"><span class="ms">format_italic</span></button>
+            <button class="tb" data-wrap="~" title="Strikethrough (~text~)"><span class="ms">strikethrough_s</span></button>
+            <span class="tb-sep"></span>
+            <button class="tb emoji" data-ins="👋">👋</button>
+            <button class="tb emoji" data-ins="🙏">🙏</button>
+            <button class="tb emoji" data-ins="📅">📅</button>
+            <button class="tb emoji" data-ins="📍">📍</button>
+            <button class="tb emoji" data-ins="🎉">🎉</button>
+            <button class="tb emoji" data-ins="✅">✅</button>
+            <span class="grow"></span>
+            <button class="tb" id="resetMsg" title="Reset to the example message"><span class="ms">restart_alt</span></button>
+          </div>
+          <textarea id="tpl" rows="7" placeholder="Hello {Name}, ..."></textarea>
+          <div class="editor-foot">
+            <span id="tplWarn" class="warn-txt"></span>
+            <span class="grow"></span>
+            <span class="muted small" id="charCount">0 characters</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ FLYER ============ -->
+      <section id="flyerCard" class="card">
+        <div class="card-head">
+          <div class="card-icon"><span class="ms">image</span></div>
+          <div><h2>3. Flyer <span class="opt">optional</span></h2><p class="muted">Attach an image. Each contact then gets a separate <b>Copy flyer</b> button.</p></div>
+        </div>
+        <div class="flyer-row">
+          <label class="flyer-drop" id="flyerDrop">
+            <input type="file" id="flyer" accept="image/*" hidden>
+            <span class="ms big">add_photo_alternate</span>
+            <span>Choose or drop an image</span>
+          </label>
+          <div class="flyer-thumb" id="flyerThumb" hidden>
+            <img id="flyerImg" alt="Flyer preview">
+            <div>
+              <b id="flyerName"></b>
+              <div class="muted small" id="flyerMeta"></div>
+              <div class="row gap8 mt8">
+                <button class="btn btn-tonal sm" id="flyerCopyTest"><span class="ms">content_copy</span> Copy flyer</button>
+                <button class="btn btn-text danger sm" id="flyerRemove"><span class="ms">close</span> Remove</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ============ PREVIEW ============ -->
+    <aside class="col-side">
+      <div class="preview-sticky">
+        <div class="preview-head">
+          <b>Live preview</b>
+          <div class="pager">
+            <button class="icon-btn" id="pvPrev" aria-label="Previous contact"><span class="ms">chevron_left</span></button>
+            <span id="pvIdx" class="muted small">Sample</span>
+            <button class="icon-btn" id="pvNext" aria-label="Next contact"><span class="ms">chevron_right</span></button>
+          </div>
+        </div>
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="wa-head">
+            <span class="ms">arrow_back</span>
+            <span class="avatar sm" id="pvAvatar">S</span>
+            <div class="grow"><b id="pvName">Sample contact</b><span id="pvNum">+256 700 000000</span></div>
+            <span class="ms">videocam</span><span class="ms">call</span>
+          </div>
+          <div class="wa-body">
+            <div class="wa-date">Today</div>
+            <div class="bubble" id="pvBubble">
+              <img id="pvImg" alt="" hidden>
+              <div id="pvText"></div>
+              <span class="bubble-meta"><span id="pvTime">10:24</span>
+                <svg viewBox="0 0 18 11" width="16" height="10"><path d="M1 6l3 3 6-7M7 9l1 1 6-7" stroke="#53BDEB" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+          </div>
+          <div class="wa-input"><span class="ms">mood</span><span class="wa-field">Message</span><span class="wa-mic"><span class="ms">mic</span></span></div>
+        </div>
+      </div>
+    </aside>
   </div>
 
-  <!-- Step 1 -->
-  <section class="panel">
-    <h2><span class="step">1</span> Load your contacts</h2>
-    <div class="row">
-      <label class="btn btn-primary">Choose Excel file
-        <input type="file" id="file" accept=".xlsx,.xls,.csv" hidden>
-      </label>
-      <a class="btn btn-ghost" href="template/WhatsApp_Contacts_Template.xlsx" download>Download blank template</a>
+  <!-- ============ SEND ============ -->
+  <section id="send" class="card">
+    <div class="card-head">
+      <div class="card-icon"><span class="ms">send</span></div>
+      <div><h2>4. Send</h2><p class="muted"><b>Send message</b> opens WhatsApp with the text ready. <span id="flyerTip">Add a flyer to get a <b>Copy flyer</b> button per contact.</span></p></div>
       <span class="grow"></span>
-      <button class="btn btn-ghost" id="clearAll" hidden>Remove list from this device</button>
+      <button class="btn btn-primary" id="sendNext"><span class="ms">bolt</span> Send to next pending</button>
     </div>
-    <p class="hint" id="loadmsg">Use the template: First Name and Phone Number are required, Extra Info is optional.</p>
+
+    <div class="send-tools">
+      <div class="seg" role="tablist" id="filters">
+        <button class="on" data-f="all">All <span id="fAll">0</span></button>
+        <button data-f="pending">Pending <span id="fPending">0</span></button>
+        <button data-f="sent">Sent <span id="fSent">0</span></button>
+        <button data-f="issues">Issues <span id="fIssues">0</span></button>
+      </div>
+      <span class="grow"></span>
+      <div class="search"><span class="ms">search</span><input type="search" id="search" placeholder="Search name or number"></div>
+      <button class="btn btn-text" id="resetSent" title="Clear all sent marks"><span class="ms">history</span> Reset progress</button>
+    </div>
+
+    <div id="list" class="list"></div>
   </section>
 
-  <!-- Step 2 -->
-  <section class="panel">
-    <h2><span class="step">2</span> Write your message</h2>
-    <textarea id="tpl" rows="4"></textarea>
-    <div class="row hint">
-      <span>Insert:</span>
-      <button class="chip" data-ins="{Name}">{Name}</button>
-      <button class="chip" data-ins="{Extra}">{Extra}</button>
-      <span class="grow"></span>
-      <label for="cc">Country code +</label>
-      <input type="text" id="cc" inputmode="numeric" size="4">
-    </div>
+  <section class="card help">
+    <details>
+      <summary><span class="ms">help</span> How sending works</summary>
+      <div class="help-grid">
+        <div><span class="ms help-ic">chat</span><b>Text message</b><p>Click <b>Send message</b>. WhatsApp opens with the personalised text typed in. Press Send in WhatsApp.</p></div>
+        <div><span class="ms help-ic">image</span><b>With a flyer (computer)</b><p>Click <b>Copy flyer</b>, then <b>Send message</b>. In the chat press <b>Ctrl+V</b> (Cmd+V on Mac). The flyer attaches and your text becomes its caption.</p></div>
+        <div><span class="ms help-ic">smartphone</span><b>With a flyer (phone)</b><p>Tap <b>Share</b> on a contact, choose WhatsApp, then pick the contact. The message is also copied so you can paste it as the caption.</p></div>
+        <div><span class="ms help-ic">shield</span><b>Stay safe</b><p>Send at a steady pace. Messaging many people who haven't saved your number in a short time can get a number restricted by WhatsApp.</p></div>
+      </div>
+    </details>
   </section>
-
-  <!-- Step 3 -->
-  <section class="panel">
-    <h2><span class="step">3</span> Flyer <span class="opt">(optional)</span></h2>
-    <div class="row">
-      <label class="btn btn-ghost">Choose image
-        <input type="file" id="flyer" accept="image/*" hidden>
-      </label>
-      <button class="btn btn-ghost" id="flyerRemove" hidden>Remove</button>
-      <img id="flyerPreview" alt="Flyer preview" hidden>
-    </div>
-    <p class="hint" id="flyerHint">Add a flyer and each contact gets a <b>Copy flyer &amp; open chat</b> button on computers, or <b>Share</b> on phones.</p>
-  </section>
-
-  <!-- Step 4 -->
-  <section class="panel sticky">
-    <div class="row">
-      <h2 style="margin:0"><span class="step">4</span> Send</h2>
-      <span class="grow"></span>
-      <input type="search" id="search" placeholder="Search name or number">
-      <label class="hint check"><input type="checkbox" id="hide"> Hide sent</label>
-    </div>
-    <div class="row" style="margin-top:8px">
-      <b id="progress">No contacts loaded</b>
-      <span class="grow"></span>
-      <button class="btn btn-ghost small" id="reset">Clear sent marks</button>
-    </div>
-    <div class="bar"><div id="barfill"></div></div>
-  </section>
-
-  <div id="list"></div>
-
-  <details class="panel help">
-    <summary>How sending works</summary>
-    <ul>
-      <li><b>Send</b> opens WhatsApp with the message already typed. Press Send inside WhatsApp.</li>
-      <li><b>With a flyer on a computer:</b> click <b>Copy flyer &amp; open chat</b>, then press <b>Ctrl+V</b> (Cmd+V on Mac) in the chat. The flyer attaches and the message becomes its caption.</li>
-      <li><b>With a flyer on a phone:</b> tap <b>Share</b>, pick WhatsApp, then choose the contact.</li>
-      <li>Send at a steady pace. Messaging many people who haven't saved your number in a short time can get a number restricted by WhatsApp.</li>
-    </ul>
-  </details>
 </main>
 
-<div id="toast" role="status"></div>
+<footer class="foot wrap">
+  <span>Rotaract Club of Rubaga · Each One, Engage for Impact</span>
+  <span class="muted">Runs entirely in your browser. No contact data is uploaded.</span>
+</footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
 
 <script src="vendor/xlsx.full.min.js"></script>
 <script src="app.js"></script>
