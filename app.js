@@ -3,7 +3,7 @@
 (() => {
   "use strict";
 
-  const DEFAULT_TPL = "Hello {Name} 👋\n\nI hope you are doing well. This is a friendly reminder about our upcoming fellowship.\n\nLooking forward to seeing you! 🙏";
+  const DEFAULT_TPL = "Hello {First Name} 👋\n\nI hope you are doing well. This is a friendly reminder about our upcoming fellowship.\n\nLooking forward to seeing you! 🙏";
   const $ = id => document.getElementById(id);
   const P = "wasender2_";
   const store = {

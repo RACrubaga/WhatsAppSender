@@ -15,4 +15,4 @@ A small web app for sending personalised WhatsApp messages (and an optional flye
 ## Files
 - `index.html`, `style.css`, `app.js`: the app (font: Google Sans; icons: Material Symbols, both from Google Fonts)
 - `vendor/xlsx.full.min.js`: SheetJS 0.18.5 (Apache-2.0), bundled so no external CDN is needed
-- `template/WhatsApp_Contacts_Template.xlsx`: blank contact template
+- `template/WhatsApp_Contacts_Template.xlsx`: blank contact template (Name, Phone Number)
