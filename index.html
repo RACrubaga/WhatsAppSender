@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WhatsApp Sender · Rotaract Club of Rubaga</title>
+<meta name="description" content="Send personalised WhatsApp messages and flyers to a contact list. Runs entirely in your browser.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>WhatsApp Sender</h1>
+    <p>Rotaract Club of Rubaga · personalised messages and flyers, one click per contact</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="privacy">
+    <strong>Your list stays on this device.</strong> Contacts, messages and flyers are processed in your browser and are never uploaded anywhere.
+  </div>
+
+  <!-- Step 1 -->
+  <section class="panel">
+    <h2><span class="step">1</span> Load your contacts</h2>
+    <div class="row">
+      <label class="btn btn-primary">Choose Excel file
+        <input type="file" id="file" accept=".xlsx,.xls,.csv" hidden>
+      </label>
+      <a class="btn btn-ghost" href="template/WhatsApp_Contacts_Template.xlsx" download>Download blank template</a>
+      <span class="grow"></span>
+      <button class="btn btn-ghost" id="clearAll" hidden>Remove list from this device</button>
+    </div>
+    <p class="hint" id="loadmsg">Use the template: First Name and Phone Number are required, Extra Info is optional.</p>
+  </section>
+
+  <!-- Step 2 -->
+  <section class="panel">
+    <h2><span class="step">2</span> Write your message</h2>
+    <textarea id="tpl" rows="4"></textarea>
+    <div class="row hint">
+      <span>Insert:</span>
+      <button class="chip" data-ins="{Name}">{Name}</button>
+      <button class="chip" data-ins="{Extra}">{Extra}</button>
+      <span class="grow"></span>
+      <label for="cc">Country code +</label>
+      <input type="text" id="cc" inputmode="numeric" size="4">
+    </div>
+  </section>
+
+  <!-- Step 3 -->
+  <section class="panel">
+    <h2><span class="step">3</span> Flyer <span class="opt">(optional)</span></h2>
+    <div class="row">
+      <label class="btn btn-ghost">Choose image
+        <input type="file" id="flyer" accept="image/*" hidden>
+      </label>
+      <button class="btn btn-ghost" id="flyerRemove" hidden>Remove</button>
+      <img id="flyerPreview" alt="Flyer preview" hidden>
+    </div>
+    <p class="hint" id="flyerHint">Add a flyer and each contact gets a <b>Copy flyer &amp; open chat</b> button on computers, or <b>Share</b> on phones.</p>
+  </section>
+
+  <!-- Step 4 -->
+  <section class="panel sticky">
+    <div class="row">
+      <h2 style="margin:0"><span class="step">4</span> Send</h2>
+      <span class="grow"></span>
+      <input type="search" id="search" placeholder="Search name or number">
+      <label class="hint check"><input type="checkbox" id="hide"> Hide sent</label>
+    </div>
+    <div class="row" style="margin-top:8px">
+      <b id="progress">No contacts loaded</b>
+      <span class="grow"></span>
+      <button class="btn btn-ghost small" id="reset">Clear sent marks</button>
+    </div>
+    <div class="bar"><div id="barfill"></div></div>
+  </section>
+
+  <div id="list"></div>
+
+  <details class="panel help">
+    <summary>How sending works</summary>
+    <ul>
+      <li><b>Send</b> opens WhatsApp with the message already typed. Press Send inside WhatsApp.</li>
+      <li><b>With a flyer on a computer:</b> click <b>Copy flyer &amp; open chat</b>, then press <b>Ctrl+V</b> (Cmd+V on Mac) in the chat. The flyer attaches and the message becomes its caption.</li>
+      <li><b>With a flyer on a phone:</b> tap <b>Share</b>, pick WhatsApp, then choose the contact.</li>
+      <li>Send at a steady pace. Messaging many people who haven't saved your number in a short time can get a number restricted by WhatsApp.</li>
+    </ul>
+  </details>
+</main>
+
+<div id="toast" role="status"></div>
+
+<script src="vendor/xlsx.full.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
